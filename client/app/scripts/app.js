@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-md5'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,6 +31,14 @@ angular
       .when('/users', {
         templateUrl: 'views/users.html',
         controller: 'UsersCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
       })
       .otherwise({
         redirectTo: '/'

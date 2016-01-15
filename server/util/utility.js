@@ -1,5 +1,7 @@
 'use strict';
 
+
+var md5 = require('md5');
 var constants=require('../config/constants');
 
 module.exports=function(info){
@@ -9,7 +11,7 @@ module.exports=function(info){
   var data={
     username:info.username,
     email:info.email,
-    password:info.password,
+    password:md5(info.password),
     sex:info.sex,
     profile:{
       picture:picture,

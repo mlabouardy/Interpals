@@ -27,4 +27,17 @@ module.exports=function(app){
       });
     });
 
+    app.post('/login',function(req,res){
+      console.log('**** Request: New connexion');
+      User.findOne({username: req.body.username, password: req.body.password},function(err,user){
+        if(err)
+          throw err;
+        if(user!=null)
+          res.status(200).send();
+        else {
+          res.status(400).send();
+        }
+      });
+    });
+
 };

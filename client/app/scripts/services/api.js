@@ -16,6 +16,9 @@ angular.module('clientApp')
       },
       users:function(){
         return $http.get(baseUrl+'/users');
+      },
+      login:function(user){
+        return $http.post(baseUrl+'/login',user);
       }
     }
   });
