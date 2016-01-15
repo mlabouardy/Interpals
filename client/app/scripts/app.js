@@ -36,7 +36,7 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/profile', {
+      .when('/profile/:id', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       })

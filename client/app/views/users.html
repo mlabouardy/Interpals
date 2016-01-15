@@ -1,6 +1,9 @@
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="user in users">
-    <img ng-src="{{user.profile.picture}}" class="img-circle" width="40px"/>
-    {{user.username}}
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-3" ng-repeat="user in users">
+    <div class="user-thumbnail">
+      <a ng-href="#/profile/{{user._id}}"><img ng-src="{{user.profile.picture}}" class="img-circle" width="40px"/></a>
+      <div class="user-country">Bordeaux, France</div>
+      <div class="user-username">{{user.username}}</div>
+    </div>
+  </div>
+</div>
