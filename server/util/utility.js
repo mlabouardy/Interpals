@@ -1,9 +1,11 @@
 'use strict';
 
-function register(info){
-  var picture='male';
+var constants=require('../config/constants');
+
+module.exports=function(info){
+  var picture=constants.CLOUD_HOST+'/male.png';
   if(info.sex=='Female')
-    picture='female';
+    picture=constants.CLOUD_HOST+'/female.png';
   var data={
     username:info.username,
     email:info.email,

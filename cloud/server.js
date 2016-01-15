@@ -7,7 +7,7 @@ var mime=require('mime');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, './upload')
   },
   filename: function (req, file, cb) {
     crypto.pseudoRandomBytes(16, function (err, raw) {
@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static('uploads'));
+app.use(express.static('upload'));
 
 app.post('/upload',upload.single('file'),function(req,res){
 	var response={
