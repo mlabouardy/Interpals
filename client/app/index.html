@@ -12,6 +12,9 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="http://webapplayers.com/inspinia_admin-v2.4/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
   </head>
   <body ng-app="clientApp">
@@ -20,33 +23,183 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">Interpals</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a href="#/users">Users</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/login">Login</a></li>
-              <li><a href="#/register">Register</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+    <div id="wrapper">
+       <nav class="navbar-default navbar-static-side" role="navigation">
+           <div class="sidebar-collapse">
+               <ul class="nav metismenu" id="side-menu">
+                   <li class="nav-header">
+                       <div class="dropdown profile-element"> <span>
+                           <img alt="image" class="img-circle" src="images/profile.jpg" width="30%"/>
+                            </span>
+                           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                           <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Med Labouardy</strong>
+                           </span> <span class="text-muted text-xs block">Software Engineer <b class="caret"></b></span> </span> </a>
+                           <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                               <li><a href="profile.html">Profile</a></li>
+                               <li><a href="contacts.html">Contacts</a></li>
+                               <li><a href="mailbox.html">Mailbox</a></li>
+                               <li class="divider"></li>
+                               <li><a href="login.html">Logout</a></li>
+                           </ul>
+                       </div>
+                       <div class="logo-element">
+                           IN+
+                       </div>
+                   </li>
+                   <li class="active">
+                       <a href="#/profile/1"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                   </li>
 
-    <div class="container-fluid">
+                   <li>
+                       <a href="#/friends"><i class="fa fa-users"></i> <span class="nav-label">Friends</span>  </a>
+                   </li>
+                   <li>
+                       <a href="#/search"><i class="fa fa-search"></i> <span class="nav-label">Search</span></a>
+                   </li>
+
+
+                   <li>
+                       <a href="#/rooms"><i class="fa fa-comment"></i> <span class="nav-label">Chat Rooms</span></a>
+                   </li>
+
+                   <li>
+                       <a href="#/mailbox"><i class="fa fa-envelope-o"></i> <span class="nav-label">Messages </span><span class="label label-info pull-right">62</span></a>
+                   </li>
+               </ul>
+
+           </div>
+       </nav>
+
+       <div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="row border-bottom">
+       <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+       <div class="navbar-header">
+           <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+       </div>
+           <ul class="nav navbar-top-links navbar-right">
+               <li>
+                   <span class="m-r-sm text-muted welcome-message">Welcome to Interpals.</span>
+               </li>
+               <li class="dropdown">
+                   <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                       <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                   </a>
+                   <ul class="dropdown-menu dropdown-messages">
+                       <li>
+                           <div class="dropdown-messages-box">
+                               <a href="profile.html" class="pull-left">
+                                   <img alt="image" class="img-circle" src="img/a7.jpg">
+                               </a>
+                               <div class="media-body">
+                                   <small class="pull-right">46h ago</small>
+                                   <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                   <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <div class="dropdown-messages-box">
+                               <a href="profile.html" class="pull-left">
+                                   <img alt="image" class="img-circle" src="img/a4.jpg">
+                               </a>
+                               <div class="media-body ">
+                                   <small class="pull-right text-navy">5h ago</small>
+                                   <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                   <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <div class="dropdown-messages-box">
+                               <a href="profile.html" class="pull-left">
+                                   <img alt="image" class="img-circle" src="img/profile.jpg">
+                               </a>
+                               <div class="media-body ">
+                                   <small class="pull-right">23h ago</small>
+                                   <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                   <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <div class="text-center link-block">
+                               <a href="mailbox.html">
+                                   <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                               </a>
+                           </div>
+                       </li>
+                   </ul>
+               </li>
+               <li class="dropdown">
+                   <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                       <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                   </a>
+                   <ul class="dropdown-menu dropdown-alerts">
+                       <li>
+                           <a href="mailbox.html">
+                               <div>
+                                   <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                   <span class="pull-right text-muted small">4 minutes ago</span>
+                               </div>
+                           </a>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <a href="profile.html">
+                               <div>
+                                   <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                   <span class="pull-right text-muted small">12 minutes ago</span>
+                               </div>
+                           </a>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <a href="grid_options.html">
+                               <div>
+                                   <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                   <span class="pull-right text-muted small">4 minutes ago</span>
+                               </div>
+                           </a>
+                       </li>
+                       <li class="divider"></li>
+                       <li>
+                           <div class="text-center link-block">
+                               <a href="notifications.html">
+                                   <strong>See All Alerts</strong>
+                                   <i class="fa fa-angle-right"></i>
+                               </a>
+                           </div>
+                       </li>
+                   </ul>
+               </li>
+
+               <li>
+                 <a href="#/logout">
+                     <i class="fa fa-sign-out"></i> Log out
+                 </a>
+               </li>
+           </ul>
+
+       </nav>
+       </div>
+
       <div ng-view=""></div>
+
+
+      <div class="footer">
+                    <div class="pull-right">
+                        10GB of <strong>250GB</strong> Free.
+                    </div>
+                    <div>
+                        <strong>Copyright</strong> Example Company &copy; 2014-2015
+                    </div>
+                </div>
+
     </div>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -71,7 +224,10 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/cryptojs/cryptojs.js"></script>
     <script src="bower_components/angular-md5/angular-md5.js"></script>
+    <script src="http://webapplayers.com/inspinia_admin-v2.4/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="http://webapplayers.com/inspinia_admin-v2.4/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -83,6 +239,9 @@
         <script src="scripts/controllers/users.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/forgot-password.js"></script>
+        <script src="scripts/controllers/mailbox.js"></script>
+        <script src="scripts/controllers/search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

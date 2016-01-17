@@ -40,6 +40,21 @@ angular
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/forgot-password', {
+        templateUrl: 'views/forgot-password.html',
+        controller: 'ForgotPasswordCtrl',
+        controllerAs: 'forgotPassword'
+      })
+      .when('/mailbox', {
+        templateUrl: 'views/mailbox.html',
+        controller: 'MailboxCtrl',
+        controllerAs: 'mailbox'
+      })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+      })
       .otherwise({
         redirectTo: '/'
       });

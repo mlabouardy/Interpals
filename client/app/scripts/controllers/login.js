@@ -16,7 +16,7 @@ angular.module('clientApp')
       };
       API.login(data)
         .success(function(){
-          $location.path('/profile');
+          $location.path('/profile/1');
         })
         .error(function(){
           console.log('ok');
