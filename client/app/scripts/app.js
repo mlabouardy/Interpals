@@ -28,8 +28,8 @@ angular
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
-      .when('/users', {
-        templateUrl: 'views/users.html',
+      .when('/friends', {
+        templateUrl: 'views/friends.html',
         controller: 'UsersCtrl'
       })
       .when('/login', {
@@ -42,23 +42,27 @@ angular
       })
       .when('/forgot-password', {
         templateUrl: 'views/forgot-password.html',
-        controller: 'ForgotPasswordCtrl',
-        controllerAs: 'forgotPassword'
+        controller: 'ForgotPasswordCtrl'
       })
       .when('/mailbox', {
         templateUrl: 'views/mailbox.html',
-        controller: 'MailboxCtrl',
-        controllerAs: 'mailbox'
+        controller: 'MailboxCtrl'
       })
       .when('/search', {
         templateUrl: 'views/search.html',
-        controller: 'SearchCtrl',
-        controllerAs: 'search'
+        controller: 'SearchCtrl'
       })
       .when('/gallery', {
         templateUrl: 'views/gallery.html',
-        controller: 'GalleryCtrl',
-        controllerAs: 'gallery'
+        controller: 'GalleryCtrl'
+      })
+      .when('/rooms', {
+        templateUrl: 'views/rooms.html',
+        controller: 'RoomsCtrl'
+      })
+      .when('/user/:id', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl'
       })
       .otherwise({
         redirectTo: '/'
