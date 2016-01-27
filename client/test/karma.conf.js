@@ -34,6 +34,10 @@ module.exports = function(config) {
       'bower_components/cryptojs/cryptojs.js',
       'bower_components/angular-md5/angular-md5.js',
       'bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/summernote/dist/summernote.js',
+      'bower_components/iCheck/icheck.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

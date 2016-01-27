@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-md5'
+    'angular-md5',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -63,6 +64,25 @@ angular
       .when('/user/:id', {
         templateUrl: 'views/user.html',
         controller: 'UserCtrl'
+      })
+      .when('/send-msg/:id', {
+        templateUrl: 'views/send-msg.html',
+        controller: 'SendMsgCtrl',
+        controllerAs: 'sendMsg'
+      })
+      .when('/msg-friend/:id', {
+        templateUrl: 'views/msg-friend.html',
+        controller: 'MsgFriendCtrl'
+      })
+      .when('/settings', {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl',
+        controllerAs: 'settings'
+      })
+      .when('/about-me', {
+        templateUrl: 'views/about-me.html',
+        controller: 'AboutMeCtrl',
+        controllerAs: 'aboutMe'
       })
       .otherwise({
         redirectTo: '/'

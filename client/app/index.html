@@ -8,6 +8,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -51,7 +53,9 @@
                    <li class="active">
                        <a href="#/profile/1"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                    </li>
-
+                   <li>
+                       <a href="#/settings"><i class="fa fa-wrench"></i> <span class="nav-label">Settings</span></a>
+                   </li>
                    <li>
                        <a href="#/friends"><i class="fa fa-users"></i> <span class="nav-label">Friends</span>  </a>
                    </li>
@@ -61,7 +65,7 @@
 
 
                    <li>
-                       <a href="#/rooms"><i class="fa fa-comment"></i> <span class="nav-label">Chat Rooms</span></a>
+                       <a href="#/rooms" target="_blank"><i class="fa fa-comment"></i> <span class="nav-label">Chat Rooms</span></a>
                    </li>
 
                    <li>
@@ -229,6 +233,10 @@
     <script src="bower_components/cryptojs/cryptojs.js"></script>
     <script src="bower_components/angular-md5/angular-md5.js"></script>
     <script src="bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/summernote/dist/summernote.js"></script>
+    <script src="bower_components/iCheck/icheck.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -246,6 +254,10 @@
         <script src="scripts/controllers/gallery.js"></script>
         <script src="scripts/controllers/rooms.js"></script>
         <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/send-msg.js"></script>
+        <script src="scripts/controllers/msg-friend.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
+        <script src="scripts/controllers/about-me.js"></script>
         <!-- endbuild -->
 </body>
 </html>
