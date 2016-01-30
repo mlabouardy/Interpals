@@ -2,20 +2,20 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:RegisterCtrl
+ * @name appApp.controller:RegisterCtrl
  * @description
  * # RegisterCtrl
- * Controller of the clientApp
+ * Controller of the appApp
  */
-angular.module('clientApp')
-  .controller('RegisterCtrl', function ($scope, API) {
-    $scope.register=function(user){
-      API.register(user)
+angular.module('appApp')
+  .controller('RegisterCtrl', function (REST, $scope, $location) {
+    $scope.register=function(){
+      REST.register($scope.user)
         .success(function(){
-          console.log('Registred !');
+          $location.path('/login');
         })
         .error(function(){
-          console.log('Failed !');
+          console.log('failed');
         });
     }
   });

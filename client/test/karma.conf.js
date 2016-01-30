@@ -1,6 +1,6 @@
 // Karma configuration
 // http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2016-01-15 using
+// Generated on 2016-01-29 using
 // generator-karma 1.0.0
 
 module.exports = function(config) {
@@ -31,13 +31,6 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
-      'bower_components/cryptojs/cryptojs.js',
-      'bower_components/angular-md5/angular-md5.js',
-      'bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/summernote/dist/summernote.js',
-      'bower_components/iCheck/icheck.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

@@ -2,89 +2,78 @@
 
 /**
  * @ngdoc overview
- * @name clientApp
+ * @name appApp
  * @description
- * # clientApp
+ * # appApp
  *
  * Main module of the application.
  */
 angular
-  .module('clientApp', [
+  .module('appApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'angular-md5',
-    'ui.bootstrap'
+    'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
+    $httpProvider.interceptors.push('TokenInterceptor');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        title:'Home',
+        access: {
+          requiredLogin: false
+        }
       })
       .when('/register', {
         templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      })
-      .when('/friends', {
-        templateUrl: 'views/friends.html',
-        controller: 'UsersCtrl'
+        controller: 'RegisterCtrl',
+        title:'Register',
+        access: {
+          requiredLogin: false
+        }
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        title:'Login',
+        access: {
+          requiredLogin: false
+        }
       })
-      .when('/profile/:id', {
+      .when('/profile', {
         templateUrl: 'views/profile.html',
-        controller: 'ProfileCtrl'
-      })
-      .when('/forgot-password', {
-        templateUrl: 'views/forgot-password.html',
-        controller: 'ForgotPasswordCtrl'
-      })
-      .when('/mailbox', {
-        templateUrl: 'views/mailbox.html',
-        controller: 'MailboxCtrl'
-      })
-      .when('/search', {
-        templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
-      })
-      .when('/gallery', {
-        templateUrl: 'views/gallery.html',
-        controller: 'GalleryCtrl'
-      })
-      .when('/rooms', {
-        templateUrl: 'views/rooms.html',
-        controller: 'RoomsCtrl'
-      })
-      .when('/user/:id', {
-        templateUrl: 'views/user.html',
-        controller: 'UserCtrl'
-      })
-      .when('/send-msg/:id', {
-        templateUrl: 'views/send-msg.html',
-        controller: 'SendMsgCtrl',
-        controllerAs: 'sendMsg'
-      })
-      .when('/msg-friend/:id', {
-        templateUrl: 'views/msg-friend.html',
-        controller: 'MsgFriendCtrl'
-      })
-      .when('/settings', {
-        templateUrl: 'views/settings.html',
-        controller: 'SettingsCtrl',
-        controllerAs: 'settings'
-      })
-      .when('/about-me', {
-        templateUrl: 'views/about-me.html',
-        controller: 'AboutMeCtrl',
-        controllerAs: 'aboutMe'
+        controller: 'ProfileCtrl',
+        title:'Profile',
+        access: {
+          requiredLogin: true
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function($rootScope, $location, AuthenticationFactory){
+    AuthenticationFactory.check();
+
+    $rootScope.$on('$routeChangeStart', function (event, current, previous) {
+      if(AuthenticationFactory.isLogged)
+        $rootScope.isConnected=true;
+      else
+        $rootScope.isConnected=false;
+
+      if ((current.access && current.access.requiredLogin) && !AuthenticationFactory.isLogged) {
+        $location.path("/login");
+      }
+
+      if(current.$$route)
+        $rootScope.title = current.$$route.title;
+      else {
+        $rootScope.title = 'Logout';
+      }
+    });
   });
