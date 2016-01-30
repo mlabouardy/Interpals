@@ -53,6 +53,24 @@ angular
           requiredLogin: true
         }
       })
+      .when('/friends', {
+        templateUrl: 'views/friends.html',
+        controller: 'FriendsCtrl',
+        title:'Friends',
+        access:{
+          requiredLogin:true
+        }
+      })
+      .when('/who-iam/:id', {
+        templateUrl: 'views/who-iam.html',
+        controller: 'WhoIamCtrl',
+        controllerAs: 'whoIam'
+      })
+      .when('/user/:id', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
+      })
       .otherwise({
         redirectTo: '/'
       });
