@@ -9,6 +9,18 @@
  */
 angular.module('appApp')
   .controller('ProfileCtrl', function (REST, $location) {
+    var mapOptions4 = {
+               zoom: 11,
+               center: new google.maps.LatLng(40.6700, -73.9400),
+               // Style for Google Maps
+               styles: [{"stylers":[{"hue":"#18a689"},{"visibility":"on"},{"invert_lightness":true},{"saturation":40},{"lightness":10}]}]
+           };
+
+
+    var mapElement2 = document.getElementById('map2');
+    var map2 = new google.maps.Map(mapElement2, mapOptions4);
+
+
     var mapData = {
               "US": 498,
               "SA": 200,
