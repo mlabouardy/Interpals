@@ -71,6 +71,11 @@ angular
         controller: 'UserCtrl',
         controllerAs: 'user'
       })
+      .when('/profile-info', {
+        templateUrl: 'views/profile-info.html',
+        controller: 'ProfileInfoCtrl',
+        controllerAs: 'profileInfo'
+      })
       .otherwise({
         redirectTo: '/'
       });
