@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'summernote'
   ])
   .config(function ($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('TokenInterceptor');
@@ -75,6 +76,10 @@ angular
         templateUrl: 'views/profile-info.html',
         controller: 'ProfileInfoCtrl',
         controllerAs: 'profileInfo'
+      })
+      .when('/profile-who-iam', {
+        templateUrl: 'views/profile-who-iam.html',
+        controller: 'ProfileWhoIamCtrl'
       })
       .otherwise({
         redirectTo: '/'
