@@ -8,7 +8,34 @@
  * Controller of the appApp
  */
 angular.module('appApp')
-  .controller('ProfileCtrl', function (REST, $location) {
+  .controller('ProfileCtrl', function (REST, $location, $scope, $log, $uibModal) {
+
+    $scope.contacts=function(){
+      var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: 'views/profile-contacts.html'
+        });
+
+        modalInstance.result.then(function() {
+
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+    }
+
+    $scope.location=function(){
+      var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: 'views/profile-location.html'
+        });
+
+        modalInstance.result.then(function() {
+
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+    }
+
     var mapOptions4 = {
                zoom: 11,
                center: new google.maps.LatLng(40.6700, -73.9400),
